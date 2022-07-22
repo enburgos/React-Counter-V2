@@ -1,38 +1,78 @@
-.App {
-  text-align: center;
+* {
+  font-family: sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.entirepage {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+}
+
+.counterNum1 {
+  flex: 1;
+  border-right: #5C47D2 3px solid;
+}
+
+.counterNum2 {
+  flex: 1;
+}
+
+.parthaute {
+
+  margin-top: 120px;
+  padding: 20px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.counter {
+  font-size: 300px;
+  padding: 0px 50px;
+  border-radius: 25px;
   color: white;
+  background-color: #5C47D2;
+  margin: 50px;
 }
 
-.App-link {
-  color: #61dafb;
+.more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 250px;
+  margin-left: 0px;
+  border: none;
+  background-color: transparent;
+  width: 15%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.less {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 300px;
+  margin-right: 0px;
+  width: 15%;
+  background-color: transparent;
+  border: none;
+}
+
+.partbasse {
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.reset {
+  display: flex;
+  justify-content: cente;
+  background-color: #5C47D2;
+  font-size: 50px;
+  border-radius: 25px;
+  padding: 20px;
+  color: white;
+  border: none;
+  box-shadow: rgb(128, 128, 128) 5px 5px 5px;
 }

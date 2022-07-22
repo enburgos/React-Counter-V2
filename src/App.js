@@ -1,25 +1,78 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
 
-function App() {
+const App = () => {
+  /*
+    La ligne suivante va permettre 3 choses :
+    créer un état : counter
+    créer une fonction qui va permettre de modifier l'état : setCounter
+    définir l'état par défaut : 0
+  */
+
+  const [numberOfCounter, setNumberOfCounter] = useState([]);
+  const [counter, setCounter] = useState(0);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="entirepage">
+      <button
+        onClick={() => {
+          //Je viens faire une copie de mon state users à l'aide du spread operator
+          const newCounter = [...numberOfCounter];
+
+          //Je viens modifier cette copie
+          newCounter.push(
+            <div className="counterNum1">
+              <div className="parthaute">
+                <button
+                  className="less"
+                  onClick={() => {
+                    // on appelle setCounter pour mettre à jour le state
+                    setCounter(counter - 1);
+                  }}
+                >
+                  -
+                </button>
+
+                <div className="counter">{counter}</div>
+                <br />
+
+                <button
+                  className="more"
+                  onClick={() => {
+                    // on appelle setCounter pour mettre à jour le state
+                    setCounter(counter + 1);
+                  }}
+                >
+                  +
+                </button>
+              </div>
+              <div className="partbasse">
+                <button
+                  className="reset"
+                  onClick={() => {
+                    // on appelle setCounter pour mettre à jour le state
+                    setCounter(counter - counter);
+                  }}
+                >
+                  Reset
+                </button>
+              </div>
+            </div>
+          );
+
+          //Je fais un setUsers sur la base de cette copie
+          setNumberOfCounter(newCounter);
+          // setUsers(["Tom", "Gwendoline", "Alexis"]);
+          console.log(setNumberOfCounter);
+        }}
+      >
+        Add Counter
+      </button>
+
+      {numberOfCounter.map((user, index) => {
+        return <h1 key={index}>{user}</h1>;
+      })}
     </div>
   );
-}
-
+};
 export default App;
